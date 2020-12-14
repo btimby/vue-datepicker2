@@ -1,8 +1,12 @@
 <template>
+  <div>
     <input
       v-model="value"
+      :class="inputClass"
       type="text"
     >
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -11,6 +15,7 @@ export default {
 
   props: {
     value: null,
+    inputClass: null,
 
     options: {
       clearBtn: true,
