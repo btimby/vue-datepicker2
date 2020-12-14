@@ -1,7 +1,7 @@
 <template>
   <div
-    :data-date="date"
-    :data-format="format"
+    v-bind:data-date="date"
+    v-bind:data-format="format"
     class="input-append date"
   >
     <input
@@ -17,7 +17,7 @@ export default {
   name: 'VueDatepicker2',
 
   props: {
-    date: String,
+    date: Date,
 
     // Options:
     format: String,
