@@ -28,6 +28,13 @@ export default {
     todayHighlight: Boolean,
   },
 
+  watch: {
+    date(newDate) {
+      console.log(`Watch:date: ${newDate}`);
+      $(this.$el).datepicker('setValue', newDate);
+    }
+  },
+
   mounted() {
     const options = {
       clearBtn: this.clearBtn,
@@ -35,10 +42,12 @@ export default {
       todayHighlight: this.todayHighlight,
     };
 
-    const dp2 = $(this.$el).datepicker(options);
-    dp2.on('changeDate', (ev) => {
-      this.$emit('change', ev.date);
-    });
+    $(this.$el).datepicker(options)
+      .on('changeDate', (ev) => {
+        this.$emit('change', ev.date);
+      });
+
+    $(this.$el).datepicker('setValue', this.date);
   },
 }
 </script>
