@@ -1,7 +1,7 @@
 <template>
   <div class="input-append date">
     <input
-      v-model="value"
+      v-bind:value="value"
       :class="inputClass"
       type="text"
     >
@@ -31,7 +31,11 @@ export default {
       todayHighlight: this.todayHighlight,
     };
 
-    $(this.$el).datepicker(options);
+    const dp2 = $(this.$el).datepicker(options);
+    dp2.on('changeDate', (ev) => {
+      console.log(`dp2.changeDate`, ev);
+      this.value = ev.date;
+    });
   },
 }
 </script>
