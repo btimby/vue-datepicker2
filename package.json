@@ -1,0 +1,24 @@
+{
+  "name": "vue-datepicker2",
+  "version": "1.0.0",
+  "description": "Vue component for Bootstrap 2 datepicker.",
+  "main": "vue-datepicker2.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btimby/vue-datepicker2.git"
+  },
+  "keywords": [
+    "Vue",
+    "Bootstrap",
+    "Datepicker"
+  ],
+  "author": "btimby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/btimby/vue-datepicker2/issues"
+  },
+  "homepage": "https://github.com/btimby/vue-datepicker2#readme"
+}
