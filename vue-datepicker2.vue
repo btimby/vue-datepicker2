@@ -15,17 +15,22 @@ export default {
 
   props: {
     value: null,
-    inputClass: null,
 
-    options: {
-      clearBtn: true,
-      autoclose: true,
-      todayHighlight: true,
-    }
+    // Options:
+    inputClass: null,
+    clearBtn: false,
+    autoClose: false,
+    todayHighlight: false,
   },
 
   mounted() {
-    $(this.$el).datepicker(this.options);
+    const options = {
+      clearBtn: this.clearBtn,
+      autoClose: this.autoClose,
+      todayHighlight: this.todayHighlight,
+    };
+
+    $(this.$el).datepicker(options);
   },
 }
 </script>
