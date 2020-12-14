@@ -19,6 +19,7 @@ export default {
     // Options:
     inputClass: null,
     clearBtn: false,
+    // NOTE: capitalization differs from datepicker option.
     autoClose: false,
     todayHighlight: false,
   },
@@ -26,7 +27,7 @@ export default {
   mounted() {
     const options = {
       clearBtn: this.clearBtn,
-      autoClose: this.autoClose,
+      autoclose: this.autoClose,
       todayHighlight: this.todayHighlight,
     };
 
