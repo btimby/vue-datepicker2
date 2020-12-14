@@ -1,9 +1,11 @@
 <template>
+  <div>
     <input
       v-model="value"
       type="text"
     >
     <slot></slot>
+  </div>
 </template>
 
 <script>
