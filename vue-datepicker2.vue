@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="input-append date">
     <input
       v-model="value"
       :class="inputClass"
