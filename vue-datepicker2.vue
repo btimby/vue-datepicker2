@@ -1,12 +1,12 @@
 <template>
   <div
-    v-bind:data-date="date"
     v-bind:data-format="format"
     class="input-append date"
   >
     <input
       :class="inputClass"
       type="text"
+      ref="input"
     >
     <slot></slot>
   </div>
@@ -28,6 +28,12 @@ export default {
     todayHighlight: Boolean,
   },
 
+  watch: {
+    date(newDate) {
+      $(this.$el).datepicker('setDate', this.date);
+    },
+  },
+
   mounted() {
     const options = {
       clearBtn: this.clearBtn,
@@ -39,6 +45,8 @@ export default {
       .on('changeDate', (ev) => {
         this.$emit('change', ev.date);
       });
+
+    $(this.$el).datepicker('setDate', this.date);
   },
 }
 </script>
