@@ -1,7 +1,10 @@
 <template>
-  <div class="input-append date">
+  <div
+    :data-date="date"
+    :data-format="format"
+    class="input-append date"
+  >
     <input
-      v-bind:value="value"
       :class="inputClass"
       type="text"
     >
@@ -14,14 +17,15 @@ export default {
   name: 'VueDatepicker2',
 
   props: {
-    value: null,
+    date: String,
 
     // Options:
-    inputClass: null,
-    clearBtn: false,
+    format: String,
+    inputClass: String,
+    clearBtn: Boolean,
     // NOTE: capitalization differs from datepicker option.
-    autoClose: false,
-    todayHighlight: false,
+    autoClose: Boolean,
+    todayHighlight: Boolean,
   },
 
   mounted() {
@@ -33,8 +37,7 @@ export default {
 
     const dp2 = $(this.$el).datepicker(options);
     dp2.on('changeDate', (ev) => {
-      console.log(`dp2.changeDate`, ev);
-      this.value = ev.date;
+      this.$emit('change', ev.date);
     });
   },
 }
