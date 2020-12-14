@@ -1,8 +1,9 @@
 <template>
-  <div class="input-append date ac-start-date-text">
-    <input v-bind="value" type="text">
+    <input
+      v-model="value"
+      type="text"
+    >
     <slot></slot>
-  </div>
 </template>
 
 <script>
