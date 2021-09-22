@@ -44,6 +44,9 @@ export default {
     $(this.$el).datepicker(options)
       .on('changeDate', (ev) => {
         this.$emit('change', ev.date);
+      })
+      .on('clearDate', () => {
+        this.$emit('change', null);
       });
 
     $(this.$el).datepicker('setDate', this.date);
