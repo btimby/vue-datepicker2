@@ -49,7 +49,9 @@ export default {
         this.$emit('change', null);
       });
 
-    $(this.$el).datepicker('setDate', this.date);
+    if (this.date) {
+      $(this.$el).datepicker('setDate', this.date);
+    }
   },
 }
 </script>
